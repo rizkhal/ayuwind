@@ -2352,7 +2352,11 @@ video {
   flex-shrink: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  transition-duration: 500ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .sidebar {
@@ -2443,6 +2447,10 @@ video {
 .theme-dark .side-menu-link:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(100, 116, 139, var(--tw-bg-opacity));
+}
+
+.mini-sidebar .side-logo, .mini-sidebar .side-menu, .mini-sidebar .side-profile, .mini-sidebar .dropdown-icon {
+  display: none;
 }
 
 .box {

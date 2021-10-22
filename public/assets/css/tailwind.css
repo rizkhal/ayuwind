@@ -1544,7 +1544,7 @@
   }
 
   .sidebar {
-    @apply relative flex-shrink-0 w-64 h-full overflow-x-hidden overflow-y-auto duration-500;
+    @apply relative flex-shrink-0 w-64 h-full overflow-x-hidden overflow-y-auto transition-all duration-200 ease-out;
   }
 
   .sidebar {
@@ -1577,6 +1577,13 @@
 
   .theme-dark .side-menu-link {
     @apply hover:bg-cool-gray-500;
+  }
+
+  .mini-sidebar .side-logo,
+  .mini-sidebar .side-menu,
+  .mini-sidebar .side-profile,
+  .mini-sidebar .dropdown-icon {
+    @apply hidden;
   }
 
   .box {

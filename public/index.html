@@ -17,7 +17,7 @@
             <img src="./assets/images/logo.svg" alt="Ayu Wind Logo" class="w-8" />
             <div class="side-logo">
                 <span class="font-bold text-white">Ayu</span>
-                <span class="text-white">Wind</span>
+                <!-- <span class="text-white">Wind</span> -->
             </div>
         </div>
 
@@ -46,26 +46,50 @@
                     <span class="side-menu">Components</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down"
+                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down dropdown-icon"
                         :class="open ? 'rotate-180' : 'rotate-0'">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </a>
                 <ul x-bind="dialogue"
-                    class="w-full p-2 mt-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700"
+                    class="w-full p-2 mt-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700 dropdown"
                     x-transition:enter="transition-all ease-in-out duration-100"
                     x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
                     x-transition:leave="transition-all ease-in-out duration-100"
                     x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                     style="display: none;">
                     <li>
-                        <a href="#" class="side-menu-link">Alert</a>
+                        <a href="#" class="side-menu-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            <span class="side-menu">Alert</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu-link">Card</a>
+                        <a href="#" class="side-menu-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            <span class="side-menu">Card</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu-link">Toast</a>
+                        <a href="#" class="side-menu-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            <span class="side-menu">Toast</span>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -81,23 +105,39 @@
                     <span class="side-menu">Forms</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down"
+                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down dropdown-icon"
                         :class="open ? 'rotate-180' : 'rotate-0'">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </a>
                 <ul x-bind="dialogue"
-                    class="w-full p-2 mt-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700"
+                    class="w-full p-2 mt-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700 dropdown"
                     x-transition:enter="transition-all ease-in-out duration-100"
                     x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
                     x-transition:leave="transition-all ease-in-out duration-100"
                     x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                     style="display: none;">
                     <li>
-                        <a href="#" class="side-menu-link">Regular</a>
+                        <a href="#" class="side-menu-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            <span class="side-menu">Regular</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#" class="side-menu-link">Validation</a>
+                        <a href="#" class="side-menu-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                                <polyline points="15 10 20 15 15 20"></polyline>
+                                <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                            </svg>
+                            <span class="side-menu">Validation</span>
+                        </a>
                     </li>
                 </ul>
             </li>
