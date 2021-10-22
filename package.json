@@ -1,0 +1,29 @@
+{
+  "name": "ayuwind",
+  "version": "1.0.0",
+  "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
+  "scripts": {
+    "build": "npx tailwindcss-cli@latest build -i ./public/assets/css/tailwind.css -o ./public/assets/css/tailwind.output.css",
+    "watch": "npx tailwindcss-cli@latest build -i ./public/assets/css/tailwind.css -o ./public/assets/css/tailwind.output.css --watch"
+  },
+  "author": "Rizkhal Lamaau <lamaaurizkhal@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.11",
+    "postcss-cli": "7.1.1",
+    "tailwindcss": "^2.2.17"
+  },
+  "keywords": [
+    "tailwind",
+    "ayuwind",
+    "dashboard",
+    "template",
+    "admin"
+  ],
+  "dependencies": {
+    "alpinejs": "^3.4.2",
+    "color": "^4.0.1",
+    "tailwindcss-multi-theme": "^1.0.4"
+  }
+}
