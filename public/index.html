@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data :class="$store.dark.on && 'theme-dark'">
+<html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,12 @@
 
 <body class="flex h-screen">
     <!-- sidebar -->
-    <aside x-ref="sidebar" class="flex flex-col sidebar">
+    <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
         <div class="flex flex-row items-center justify-center my-4">
             <img src="./assets/images/logo.svg" alt="Ayu Wind Logo" class="w-8" />
             <div class="side-logo">
                 <span class="font-bold text-white">Ayu</span>
-                <!-- <span class="text-white">Wind</span> -->
+                <span class="text-white">Wind</span>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
                     x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                     style="display: none;">
                     <li>
-                        <a href="#" class="side-menu-link">
+                        <a href="./pages/alert.html" class="side-menu-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
@@ -176,7 +176,7 @@
 
             <!-- dark toggle -->
             <div class="ml-auto mr-6 space-x-6 intro-x">
-                <button @click="$store.dark.toggle()">
+                <button @click="$store.dark.setTheme()">
                     <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="feather feather-sun">
@@ -201,7 +201,7 @@
         <!-- end header -->
 
         <!-- main content -->
-        <main class="h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+        <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
             <div class="grid grid-cols-12 gap-6">
                 <div class="col-span-12 xxl:col-span-9">
                     <div class="grid grid-cols-12 gap-6">
@@ -223,7 +223,7 @@
                             </div>
                             <div class="grid grid-cols-12 gap-6 mt-5">
                                 <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                                    <div class="widget-box zoom-in">
+                                    <div class="widget-box">
                                         <div class="p-5 box">
                                             <div class="flex">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
@@ -237,24 +237,25 @@
                                                     </path>
                                                 </svg>
                                                 <div class="ml-auto">
-                                                    <div class="cursor-pointer widget-box__indicator bg-theme-9"> 33%
+                                                    <div class="flex items-center px-2 bg-green-400 rounded-lg">
+                                                        <span class="mr-2 text-green-200">33%</span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px"
                                                             height="24px" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
                                                             stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-chevron-up w-4 h-4 ml-0.5 w-4 h-4 ml-0.5">
+                                                            class="w-4 h-4 text-green-200 feather feather-chevron-up">
                                                             <polyline points="18 15 12 9 6 15"></polyline>
                                                         </svg>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-6 text-3xl font-medium leading-8">4.710</div>
-                                            <div class="mt-1 text-base text-gray-600">Item Sales</div>
+                                            <div class="mt-1 text-base text-gray-500">Item Sales</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                                    <div class="widget-box zoom-in">
+                                    <div class="widget-box">
                                         <div class="p-5 box">
                                             <div class="flex">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
@@ -265,24 +266,25 @@
                                                     <line x1="1" y1="10" x2="23" y2="10"></line>
                                                 </svg>
                                                 <div class="ml-auto">
-                                                    <div class="cursor-pointer widget-box__indicator bg-theme-6"> 2%
+                                                    <div class="flex items-center px-2 bg-red-400 rounded-lg">
+                                                        <span class="mr-2 text-red-200">2%</span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px"
                                                             height="24px" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
                                                             stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-chevron-down w-4 h-4 ml-0.5 w-4 h-4 ml-0.5">
-                                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                                            class="w-4 h-4 text-red-200 feather feather-chevron-down">
+                                                            <polyline points="18 15 12 9 6 15"></polyline>
                                                         </svg>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-6 text-3xl font-medium leading-8">3.721</div>
-                                            <div class="mt-1 text-base text-gray-600">New Orders</div>
+                                            <div class="mt-1 text-base text-gray-500">New Orders</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                                    <div class="widget-box zoom-in">
+                                    <div class="widget-box">
                                         <div class="p-5 box">
                                             <div class="flex">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
@@ -294,24 +296,25 @@
                                                     <line x1="12" y1="17" x2="12" y2="21"></line>
                                                 </svg>
                                                 <div class="ml-auto">
-                                                    <div class="cursor-pointer widget-box__indicator bg-theme-9"> 12%
+                                                    <div class="flex items-center px-2 bg-green-400 rounded-lg">
+                                                        <span class="mr-2 text-green-200">12%</span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px"
                                                             height="24px" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
                                                             stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-chevron-up w-4 h-4 ml-0.5 w-4 h-4 ml-0.5">
+                                                            class="w-4 h-4 text-green-200 feather feather-chevron-up">
                                                             <polyline points="18 15 12 9 6 15"></polyline>
                                                         </svg>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-6 text-3xl font-medium leading-8">2.149</div>
-                                            <div class="mt-1 text-base text-gray-600">Total Products</div>
+                                            <div class="mt-1 text-base text-gray-500">Total Products</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                                    <div class="widget-box zoom-in">
+                                    <div class="widget-box">
                                         <div class="p-5 box">
                                             <div class="flex">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
@@ -322,19 +325,20 @@
                                                     <circle cx="12" cy="7" r="4"></circle>
                                                 </svg>
                                                 <div class="ml-auto">
-                                                    <div class="cursor-pointer widget-box__indicator bg-theme-9"> 22%
+                                                    <div class="flex items-center px-2 bg-green-400 rounded-lg">
+                                                        <span class="mr-2 text-green-200">22%</span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24px"
                                                             height="24px" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="2"
                                                             stroke-linecap="round" stroke-linejoin="round"
-                                                            class="feather feather-chevron-up w-4 h-4 ml-0.5 w-4 h-4 ml-0.5">
+                                                            class="w-4 h-4 text-green-200 feather feather-chevron-up">
                                                             <polyline points="18 15 12 9 6 15"></polyline>
                                                         </svg>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-6 text-3xl font-medium leading-8">152.040</div>
-                                            <div class="mt-1 text-base text-gray-600">Unique Visitor</div>
+                                            <div class="mt-1 text-base text-gray-500">Unique Visitor</div>
                                         </div>
                                     </div>
                                 </div>
