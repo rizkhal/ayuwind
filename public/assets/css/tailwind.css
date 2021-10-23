@@ -41,7 +41,31 @@
   }
 }
 
+@keyframes bounce-x {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
 @layer components {
+  .animate-bounce-x {
+    animation: bounce-x 1s infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: bounce-x;
+  }
+
   * > .intro-x:first-child {
     transform: translateX(50px);
   }
@@ -1576,6 +1600,10 @@
     @apply hover:bg-cool-gray-500;
   }
 
+  .sidebar .dropdown-container {
+    @apply w-full p-2 mt-2 space-y-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700;
+  }
+
   .mini-sidebar .side-logo,
   .mini-sidebar .side-menu,
   .mini-sidebar .side-profile,
@@ -1617,7 +1645,7 @@
   }
 
   .alert-primary {
-    @apply text-blue-200 bg-blue-500;
+    @apply text-purple-200 bg-purple-500;
   }
 
   .alert-secondary {
@@ -1629,7 +1657,7 @@
   }
 
   .alert-warning {
-    @apply text-yellow-200 bg-yellow-400;
+    @apply text-orange-200 bg-orange-400;
   }
 
   .alert-danger {
@@ -1641,7 +1669,7 @@
   }
 
   .alert-outline-primary {
-    @apply text-blue-500 border border-blue-500;
+    @apply text-purple-500 border border-purple-500;
   }
 
   .alert-outline-secondary {
@@ -1653,7 +1681,7 @@
   }
 
   .alert-outline-warning {
-    @apply text-yellow-500 border border-yellow-500;
+    @apply text-orange-500 border border-orange-500;
   }
 
   .alert-outline-danger {
@@ -1662,5 +1690,133 @@
 
   .alert-outline-dark {
     @apply text-gray-800 border border-gray-800;
+  }
+
+  /*
+   * Button
+   * ================================================================================
+   */
+
+  .btn {
+    @apply inline-flex items-center justify-center p-2 text-sm font-semibold transition duration-200 border rounded-md shadow-md cursor-pointer;
+  }
+
+  .btn-sm {
+    @apply p-1;
+  }
+
+  .btn-lg {
+    @apply p-3;
+  }
+
+  .btn-primary {
+    @apply text-purple-200 bg-purple-500 border-purple-500;
+  }
+
+  .btn-secondary {
+    @apply text-gray-200 bg-gray-500 border-gray-500;
+  }
+
+  .btn-success {
+    @apply text-green-200 bg-green-500 border-green-500;
+  }
+
+  .btn-warning {
+    @apply text-orange-200 bg-orange-500 border-orange-500;
+  }
+
+  .btn-danger {
+    @apply text-red-200 bg-red-500 border-red-500;
+  }
+
+  .btn-dark {
+    @apply text-gray-400 bg-gray-800 border-gray-800;
+  }
+
+  .btn-outline-primary {
+    @apply text-purple-500 bg-transparent border-purple-500;
+  }
+
+  .btn-outline-secondary {
+    @apply text-gray-500 bg-transparent border-gray-500;
+  }
+
+  .btn-outline-success {
+    @apply text-green-500 bg-transparent border-green-500;
+  }
+
+  .btn-outline-warning {
+    @apply text-orange-500 bg-transparent border-orange-500;
+  }
+
+  .btn-outline-danger {
+    @apply text-red-500 bg-transparent border-red-500;
+  }
+
+  .btn-outline-dark {
+    @apply text-gray-800 bg-transparent border-gray-800;
+  }
+
+  .btn-primary:focus,
+  .btn-outline-primary:focus {
+    @apply shadow-outline-purple;
+  }
+
+  .btn-secondary:focus,
+  .btn-outline-secondary:focus {
+    @apply shadow-outline-gray;
+  }
+
+  .btn-success:focus,
+  .btn-outline-success:focus {
+    @apply shadow-outline-green;
+  }
+
+  .btn-warning:focus,
+  .btn-outline-warning:focus {
+    @apply shadow-outline-orange;
+  }
+
+  .btn-danger:focus,
+  .btn-outline-danger:focus {
+    @apply shadow-outline-red;
+  }
+
+  .btn-dark:focus,
+  .btn-outline-dark:focus {
+    @apply shadow-outline-blue;
+  }
+
+  .btn-facebook,
+  .btn-twitter,
+  .btn-instagram,
+  .btn-linkedin {
+    @apply text-white;
+  }
+
+  .btn-facebook {
+    border: #3b5998 !important;
+    background-color: #3b5998 !important;
+  }
+
+  .btn-twitter {
+    border: #49b3f4 !important;
+    background-color: #49b3f4 !important;
+  }
+
+  .btn-instagram {
+    @apply border-pink-400 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500;
+  }
+
+  .btn-linkedin {
+    border: #0077b5 !important;
+    background-color: #0077b5 !important;
+  }
+
+  .btn-facebook:focus,
+  .btn-twitter:focus,
+  .btn-instagram:focus,
+  .btn-linkedin:focus {
+    @apply shadow-outline-blue;
   }
 }
