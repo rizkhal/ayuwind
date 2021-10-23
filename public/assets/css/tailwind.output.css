@@ -2427,6 +2427,33 @@ video {
   background-color: rgba(100, 116, 139, var(--tw-bg-opacity));
 }
 
+.sidebar .dropdown-container {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.sidebar .dropdown-container > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.sidebar .dropdown-container {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(108, 43, 217, var(--tw-bg-opacity));
+}
+
+.theme-dark .sidebar .dropdown-container {
+  --tw-bg-opacity: 1;
+  background-color: rgba(54, 65, 82, var(--tw-bg-opacity));
+}
+
+.sidebar .dropdown-container {
+  padding: 0.5rem;
+}
+
 .mini-sidebar .side-logo, .mini-sidebar .side-menu, .mini-sidebar .side-profile, .mini-sidebar .dropdown-icon {
   display: none;
 }

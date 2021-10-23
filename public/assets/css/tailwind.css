@@ -1576,6 +1576,10 @@
     @apply hover:bg-cool-gray-500;
   }
 
+  .sidebar .dropdown-container {
+    @apply w-full p-2 mt-2 space-y-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700;
+  }
+
   .mini-sidebar .side-logo,
   .mini-sidebar .side-menu,
   .mini-sidebar .side-profile,
