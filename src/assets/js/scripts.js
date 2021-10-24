@@ -69,10 +69,7 @@ document.addEventListener("alpine:init", () => {
         sidebar.classList.remove("mini-sidebar");
       }
     },
-  }));
-
-  Alpine.data("sidebar", () => ({
-    toggle: {
+    sidebarToggle: {
       ["@click"]() {
         this.$store.sidebar.setSidebar();
         this.$refs.sidebar.classList.toggle("mini-sidebar");

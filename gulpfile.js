@@ -76,7 +76,7 @@ function watchFiles() {
   watch(`./src/views`, buildHtmlTask).on("change", reload);
   watch(`./src/views/pages`, buildPageTask).on("change", reload);
 
-  watch(["./tailwind.config.js", `./src/assets/css/*.css`], buildScssTask).on(
+  watch(["./tailwind.config.js", `./src/assets/scss/**/*.scss`], buildScssTask).on(
     "change",
     reload
   );

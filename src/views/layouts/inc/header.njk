@@ -1,20 +1,11 @@
-<header x-data="sidebar"
-            class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
-    <!-- sidebar toggle -->
-    <button x-bind="toggle" type="button" class="ml-4 -intro-x">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2 transform rotate-90">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-    </button>
-
+<header
+    class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
     <!-- dark toggle -->
     <div class="ml-auto mr-6 space-x-6 intro-x">
         <button @click="$store.dark.setTheme()">
-            <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-sun">
+            <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-sun">
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
                 <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -25,9 +16,9 @@
                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-moon">
+            <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-moon">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
         </button>
