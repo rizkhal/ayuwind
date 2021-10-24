@@ -104,4 +104,30 @@ document.addEventListener("alpine:init", () => {
       },
     },
   }));
+
+  Alpine.data("toast", () => ({
+    counter: 0,
+    list: [],
+    createToast(type, title, message) {
+      const index = this.list.length;
+      let totalVisible =
+        this.list.filter((toast) => {
+          return toast.visible;
+        }).length + 1;
+
+      this.list.push({
+        id: this.counter++,
+        type,
+        title,
+        message,
+        visible: true,
+      });
+      setTimeout(() => {
+        this.destroyToast(index);
+      }, 5000 * totalVisible);
+    },
+    destroyToast(index) {
+      this.list[index].visible = false;
+    },
+  }));
 });

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Components &mdash; Ayuwind</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script defer src="./assets/js/alpine.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alert Components &mdash; Ayuwind</title>
-  <link rel="stylesheet" href="./assets/css/styles.css">
-  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-</head>
-
-<body class="flex h-screen">
-  <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
+  <body class="flex h-screen">
+    <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
     <div class="flex flex-row items-center my-4">
         <div class="side-logo">
             <span class="text-white">
@@ -94,7 +93,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="side-menu-link">
+                    <a href="card.html" class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -117,7 +116,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="side-menu-link">
+                    <a href="toast.html" class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -194,8 +193,8 @@
     </div>
 </aside>
 
-  <div class="flex flex-col flex-1 w-full">
-    <header
+    <div class="flex flex-col flex-1 w-full">
+      <header
     class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
     <!-- dark toggle -->
     <div class="ml-auto mr-6 space-x-6 intro-x">
@@ -221,8 +220,8 @@
         </button>
     </div>
 </header>
-    <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
-      
+      <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+        
     <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12 xxl:col-span-9">
             <div class="grid grid-cols-12 gap-6">
@@ -760,10 +759,9 @@
         </div>
     </div>
 
-    </main>
-  </div>
+      </main>
+    </div>
 
-  <script src="./assets/js/scripts.js"></script>
-</body>
-
+    <script src="./assets/js/scripts.js"></script>
+  </body>
 </html>

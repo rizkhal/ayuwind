@@ -68,6 +68,12 @@ function buildJavascriptTask() {
   return src([`./src/assets/js/*.js`]).pipe(dest("./dist/assets/js"));
 }
 
+function buildAlpineTask() {
+  return src('./node_modules/alpinejs/dist/cdn.js')
+    .pipe(concat({ path: "alpine.js" }))
+    .pipe(dest("./dist/assets/js"));
+}
+
 function buildImageTask() {
   return src(`./src/assets/img/*`).pipe(dest("./dist/assets/images"));
 }
@@ -76,10 +82,10 @@ function watchFiles() {
   watch(`./src/views`, buildHtmlTask).on("change", reload);
   watch(`./src/views/pages`, buildPageTask).on("change", reload);
 
-  watch(["./tailwind.config.js", `./src/assets/scss/**/*.scss`], buildScssTask).on(
-    "change",
-    reload
-  );
+  watch(
+    ["./tailwind.config.js", `./src/assets/scss/**/*.scss`],
+    buildScssTask
+  ).on("change", reload);
   watch(`./src/assets/js/**/*.js`, buildJavascriptTask).on("change", reload);
   watch(`./src/assets/images/**/*`, buildImageTask).on("chnage", reload);
 }
@@ -89,6 +95,7 @@ exports.default = series(
   parallel(
     buildScssTask,
     buildJavascriptTask,
+    buildAlpineTask,
     buildImageTask,
     buildHtmlTask,
     buildPageTask
