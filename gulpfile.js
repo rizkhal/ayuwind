@@ -3,7 +3,6 @@ const del = require("del");
 const njk = require("gulp-nunjucks-render");
 const postcss = require("gulp-postcss");
 const concat = require("gulp-concat");
-const sass = require("gulp-sass");
 const browserSync = require("browser-sync").create();
 
 function serve(cb) {

@@ -12,6 +12,9 @@ module.exports = {
           "&::placeholder": {
             color: theme("colors.gray.400"),
           },
+          "&:disabled": {
+            cursor: theme("cursor.not-allowed"),
+          },
         },
       },
     }),
@@ -191,6 +194,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-multi-theme"),
+    require("@tailwindcss/custom-forms"),
     plugin(({ addUtilities, e, theme, variants }) => {
       const newUtilities = {};
       Object.entries(theme("colors")).map(([name, value]) => {

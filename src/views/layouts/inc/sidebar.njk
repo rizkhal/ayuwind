@@ -21,7 +21,16 @@
         <li
         class="mx-3"
         x-data="dropdown({
-            open: {% if page == 'alert.html' or page == 'button.html' %}true{%else%}false{% endif %}
+            open:
+                {%
+                    if page == 'alert.html'
+                        or page == 'button.html'
+                        or page == 'input.html'
+                %}
+                    true
+                {%else%}
+                    false
+                {% endif %}
         })">
             <a href="#" x-bind="toggle" class="relative side-menu-link"
                     :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
@@ -78,6 +87,17 @@
                             <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
                         </svg>
                         <span class="side-menu">Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="input.html" class="side-menu-link {{ 'sidebar-active'|is_active('^input.html', page)|safe }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Input</span>
                     </a>
                 </li>
                 <li>
