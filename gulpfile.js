@@ -2,6 +2,7 @@ const { src, dest, series, watch, parallel } = require("gulp");
 const del = require("del");
 const njk = require("gulp-nunjucks-render");
 const postcss = require("gulp-postcss");
+const concat = require("gulp-concat");
 const browserSync = require("browser-sync").create();
 
 function serve(cb) {
@@ -56,9 +57,10 @@ function buildPageTask() {
     .pipe(dest("dist/pages"));
 }
 
-function buildCssTask() {
-  return src(`./src/assets/css/*.css`)
+function buildScssTask() {
+  return src(`./src/assets/scss/*.scss`)
     .pipe(postcss())
+    .pipe(concat({ path: "styles.css" }))
     .pipe(dest("./dist/assets/css"));
 }
 
@@ -74,7 +76,7 @@ function watchFiles() {
   watch(`./src/views`, buildHtmlTask).on("change", reload);
   watch(`./src/views/pages`, buildPageTask).on("change", reload);
 
-  watch(["./tailwind.config.js", `./src/assets/css/*.css`], buildCssTask).on(
+  watch(["./tailwind.config.js", `./src/assets/css/*.css`], buildScssTask).on(
     "change",
     reload
   );
@@ -85,7 +87,7 @@ function watchFiles() {
 exports.default = series(
   cleanDistTask,
   parallel(
-    buildCssTask,
+    buildScssTask,
     buildJavascriptTask,
     buildImageTask,
     buildHtmlTask,
@@ -98,10 +100,10 @@ exports.default = series(
 exports.build = series(
   cleanDistTask,
   parallel(
-    buildCssTask,
+    buildScssTask,
     buildJavascriptTask,
     buildImageTask,
     buildHtmlTask,
     buildPageTask
-  ),
+  )
 );
