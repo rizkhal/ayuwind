@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button &mdash; Ayuwind</title>
+    <title>Button Components &mdash; Ayuwind</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   </head>
@@ -33,7 +33,10 @@
         <li
         class="mx-3"
         x-data="dropdown({
-            open: true
+            open:
+                
+                    true
+                
         })">
             <a href="#" x-bind="toggle" class="relative side-menu-link"
                     :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
@@ -90,6 +93,17 @@
                             <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
                         </svg>
                         <span class="side-menu">Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="input.html" class="side-menu-link ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Input</span>
                     </a>
                 </li>
                 <li>

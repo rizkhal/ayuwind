@@ -9,6 +9,7 @@
   "author": "Rizkhal Lamaau <lamaaurizkhal@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^10.3.7",
     "browser-sync": "^2.27.5",
     "color": "^4.0.1",
