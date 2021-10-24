@@ -1,0 +1,18 @@
+.box {
+  @apply relative bg-white border-transparent rounded-md shadow-md;
+}
+
+.theme-dark .box {
+  @apply bg-cool-gray-700;
+}
+
+.widget-box:before {
+  content: "";
+  background: white;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 4%);
+  @apply absolute left-0 right-0 w-11/12 h-full mx-auto mt-3 rounded-md;
+}
+
+.theme-dark .widget-box:before {
+  background: #2d3650 !important;
+}
