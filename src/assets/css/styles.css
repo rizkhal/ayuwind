@@ -5,15 +5,15 @@
 @tailwind base;
 
 /**
-  * This injects Tailwind's component classes and any component classes
-  * registered by plugins.
-  */
+   * This injects Tailwind's component classes and any component classes
+   * registered by plugins.
+   */
 @tailwind components;
 
 /**
-  * This injects Tailwind's utility classes and any utility classes registered
-  * by plugins.
-  */
+   * This injects Tailwind's utility classes and any utility classes registered
+   * by plugins.
+   */
 @tailwind utilities;
 
 @-webkit-keyframes intro-x-animation {
@@ -1568,9 +1568,9 @@
   }
 
   /*
-   * Sidebar
-   * ================================================================================
-   */
+    * Sidebar
+    * ================================================================================
+    */
 
   .sidebar {
     @apply relative flex-shrink-0 w-64 h-full overflow-x-hidden overflow-y-auto transition-all duration-200 ease-out;
@@ -1611,10 +1611,14 @@
     @apply hidden;
   }
 
+  .sidebar-active {
+    @apply bg-purple-500 dark:bg-cool-gray-500;
+  }
+
   /*
-   * General
-   * ================================================================================
-   */
+    * General
+    * ================================================================================
+    */
 
   .box {
     @apply relative bg-white border-transparent rounded-md shadow-md;
@@ -1636,9 +1640,9 @@
   }
 
   /*
-   * Alert
-   * ================================================================================
-   */
+    * Alert
+    * ================================================================================
+    */
 
   .alert {
     @apply relative p-3 rounded-md;
@@ -1693,9 +1697,9 @@
   }
 
   /*
-   * Button
-   * ================================================================================
-   */
+    * Button
+    * ================================================================================
+    */
 
   .btn {
     @apply inline-flex items-center justify-center p-2 text-sm font-semibold transition duration-200 border rounded-md shadow-md cursor-pointer;
