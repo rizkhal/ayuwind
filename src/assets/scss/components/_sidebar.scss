@@ -1,0 +1,42 @@
+.sidebar {
+  @apply relative flex-shrink-0 w-64 h-full overflow-x-hidden overflow-y-auto transition-all duration-200 ease-out;
+}
+
+.sidebar {
+  @apply bg-gradient-to-b from-purple-700 via-purple-600 to-purple-800;
+}
+
+.theme-dark .sidebar {
+  @apply bg-gradient-to-b from-cool-gray-700 via-cool-gray-600 to-cool-gray-800;
+}
+
+.mini-sidebar {
+  @apply w-20;
+}
+
+.side-logo {
+  @apply ml-3 text-3xl;
+}
+
+.side-menu-link {
+  @apply flex flex-row items-center p-4 space-x-2 text-white transition rounded-xl hover:bg-purple-500;
+}
+
+.theme-dark .side-menu-link {
+  @apply hover:bg-cool-gray-500;
+}
+
+.sidebar .dropdown-container {
+  @apply w-full p-2 mt-2 space-y-2 overflow-hidden bg-purple-700 rounded-xl dark:bg-cool-gray-700;
+}
+
+.mini-sidebar .side-logo,
+.mini-sidebar .side-menu,
+.mini-sidebar .side-profile,
+.mini-sidebar .dropdown-icon {
+  @apply hidden;
+}
+
+.sidebar-active {
+  @apply bg-purple-500 dark:bg-cool-gray-500;
+}
