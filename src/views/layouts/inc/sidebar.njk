@@ -9,7 +9,7 @@
 
     <ul class="mt-10 mb-5 space-y-2 side-menu-container">
         <li class="mx-3">
-            <a href="#" class="bg-purple-500 side-menu-link dark:bg-cool-gray-500">
+            <a href="index.html" class="side-menu-link {{ 'sidebar-active'|is_active('^index.html', page)|safe }}">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -18,7 +18,11 @@
                 <span class="side-menu">Dashboard</span>
             </a>
         </li>
-        <li class="mx-3" x-data="dropdown">
+        <li
+        class="mx-3"
+        x-data="dropdown({
+            open: {% if page == 'alert.html' or page == 'button.html' %}true{%else%}false{% endif %}
+        })">
             <a href="#" x-bind="toggle" class="relative side-menu-link"
                     :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -44,7 +48,7 @@
                     x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                     style="display: none;">
                 <li>
-                    <a href="./components/alert.html" class="side-menu-link">
+                    <a href="alert.html" class="side-menu-link {{ 'sidebar-active'|is_active('^alert.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
@@ -55,7 +59,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./components/button.html" class="side-menu-link">
+                    <a href="button.html" class="side-menu-link {{ 'sidebar-active'|is_active('^button.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
@@ -66,7 +70,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./components/card.html" class="side-menu-link">
+                    <a href="#" class="side-menu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
@@ -77,7 +81,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./components/toast.html" class="side-menu-link">
+                    <a href="#" class="side-menu-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">

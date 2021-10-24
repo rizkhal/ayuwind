@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button &mdash; Ayuwind</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </head>
+
+  <body class="flex h-screen">
+    <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
+    <div class="flex flex-row items-center justify-center my-4">
+        <img src="./assets/images/logo.svg" alt="Ayu Wind Logo" class="w-8"/>
+        <div class="side-logo">
+            <span class="font-bold text-white">Ayu</span>
+            <span class="text-white">Wind</span>
+        </div>
+    </div>
+
+    <ul class="mt-10 mb-5 space-y-2 side-menu-container">
+        <li class="mx-3">
+            <a href="index.html" class="side-menu-link ">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="side-menu">Dashboard</span>
+            </a>
+        </li>
+        <li
+        class="mx-3"
+        x-data="dropdown({
+            open: true
+        })">
+            <a href="#" x-bind="toggle" class="relative side-menu-link"
+                    :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-grid">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span class="side-menu">Components</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down dropdown-icon"
+                        :class="open ? 'rotate-180' : 'rotate-0'">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+            <ul x-bind="dialogue" class="dropdown-container"
+                    x-transition:enter="transition-all ease-in-out duration-100"
+                    x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
+                    x-transition:leave="transition-all ease-in-out duration-100"
+                    x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
+                    style="display: none;">
+                <li>
+                    <a href="alert.html" class="side-menu-link ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Alert</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="button.html" class="side-menu-link sidebar-active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Button</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="side-menu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Card</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="side-menu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Toast</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="mx-3" x-data="dropdown">
+            <a href="#" x-bind="toggle" class="relative side-menu-link"
+                    :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-sidebar">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                </svg>
+                <span class="side-menu">Forms</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="absolute w-4 h-4 duration-300 transform right-3 feather feather-chevron-down dropdown-icon"
+                        :class="open ? 'rotate-180' : 'rotate-0'">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </a>
+            <ul x-bind="dialogue" class="dropdown-container"
+                    x-transition:enter="transition-all ease-in-out duration-100"
+                    x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
+                    x-transition:leave="transition-all ease-in-out duration-100"
+                    x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
+                    style="display: none;">
+                <li>
+                    <a href="#" class="side-menu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Regular</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="side-menu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4 feather feather-corner-down-right">
+                            <polyline points="15 10 20 15 15 20"></polyline>
+                            <path d="M4 4v7a4 4 0 0 0 4 4h12"></path>
+                        </svg>
+                        <span class="side-menu">Validation</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="w-full mt-auto mb-5">
+        <div class="p-2 mx-3 bg-purple-600 rounded-xl dark:bg-cool-gray-500">
+            <div class="flex flex-row items-center">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=50&h=50"
+                        alt="Profile Picture" class="rounded-xl"/>
+                <div class="side-profile">
+                    <div class="flex flex-col ml-2 space-y-1 text-sm text-white">
+                        <span class="font-bold">Rizkhal Lamaau</span>
+                        <span class="text-xs">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+    <div class="flex flex-col flex-1 w-full">
+      <header x-data="sidebar"
+            class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
+    <!-- sidebar toggle -->
+    <button x-bind="toggle" type="button" class="ml-6 -intro-x">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- dark toggle -->
+    <div class="ml-auto mr-6 space-x-6 intro-x">
+        <button @click="$store.dark.setTheme()">
+            <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-sun">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-moon">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+</header>
+      <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+        
+    <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 xxl:col-span-9">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12">
+                    <div class="flex items-center h-10 intro-y">
+                        <h2 class="mr-5 text-lg font-medium truncate">Buttons</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-6 mt-5 intro-y">
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="intro-y box">
+                        <div
+                                    class="flex flex-col p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Basic Buttons</h2>
+                        </div>
+                        <div
+                                    class="flex flex-col items-center justify-center w-full p-5 space-x-0 space-y-2 overflow-auto md:space-x-2 md:space-y-0 md:flex-row">
+                            <button class="w-24 btn btn-primary">Primary</button>
+                            <button class="w-24 btn btn-secondary">Secondary</button>
+                            <button class="w-24 btn btn-success">Success</button>
+                            <button class="w-24 btn btn-warning">Warning</button>
+                            <button class="w-24 btn btn-danger">Danger</button>
+                            <button class="w-24 btn btn-dark">Dark</button>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Button Links</h2>
+                        </div>
+                        <div
+                                    class="flex flex-col items-center justify-center w-full p-5 space-x-0 space-y-2 overflow-auto md:space-x-2 md:space-y-0 md:flex-row">
+                            <a href="#" class="w-24 btn btn-primary">Link</a>
+                            <a href="#" class="w-24 btn btn-secondary">Button</a>
+                            <a href="#" class="w-24 btn btn-success">Input</a>
+                            <a href="#" class="w-24 btn btn-warning">Submit</a>
+                            <a href="#" class="w-24 btn btn-danger">Reset</a>
+                            <a href="#" class="w-24 btn btn-dark">Metal</a>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Social Media Buttons</h2>
+                        </div>
+                        <div class="flex items-center justify-center p-5">
+                            <div class="flex flex-wrap">
+                                <button class="w-32 mb-2 mr-2 btn btn-facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 mr-2 feather feather-facebook">
+                                        <path
+                                                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                    </svg>
+                                            Facebook
+                                        </button>
+                                <button class="w-32 mb-2 mr-2 btn btn-twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 mr-2 feather feather-twitter">
+                                        <path
+                                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                    </svg>
+                                            Twitter
+                                        </button>
+                                <button class="w-32 mb-2 mr-2 btn btn-instagram">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 mr-2 feather feather-instagram">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                    </svg>
+                                            Instagram
+                                        </button>
+                                <button class="w-32 mb-2 mr-2 btn btn-linkedin">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-4 h-4 mr-2 feather feather-linkedin">
+                                        <path
+                                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg>
+                                            Linkedin
+                                        </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Icon Only Buttons</h2>
+                        </div>
+                        <div class="flex items-center justify-center p-5 space-x-2">
+                            <button class="mb-2 mr-1 btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-5 h-5 feather feather-activity">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </button>
+                            <button class="mb-2 mr-1 btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-5 h-5 feather feather-hard-drive">
+                                    <line x1="22" y1="12" x2="2" y2="12"></line>
+                                    <path
+                                                d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                                    <line x1="6" y1="16" x2="6.01" y2="16"></line>
+                                    <line x1="10" y1="16" x2="10.01" y2="16"></line>
+                                </svg>
+                            </button>
+                            <button class="mb-2 mr-1 btn btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-5 h-5 feather feather-calendar">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </button>
+                            <button class="mb-2 mr-1 btn btn-warning">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-5 h-5 feather feather-share-2">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                            </button>
+                            <button class="mb-2 mr-1 btn btn-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="w-5 h-5 feather feather-trash">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path
+                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                            </button>
+                            <button class="mb-2 mr-1 btn btn-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-5 h-5 feather feather-image">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Outline Buttons</h2>
+                        </div>
+                        <div
+                                    class="flex flex-col items-center justify-center w-full p-5 space-x-0 space-y-2 overflow-auto md:space-x-2 md:space-y-0 md:flex-row">
+                            <button class="w-24 btn btn-outline-primary">
+                                        Primary
+                                    </button>
+                            <button class="w-24 btn btn-outline-secondary">
+                                        Secondary
+                                    </button>
+                            <button class="w-24 btn btn-outline-success">
+                                        Success
+                                    </button>
+                            <button class="w-24 btn btn-outline-warning">
+                                        Warning
+                                    </button>
+                            <button class="w-24 btn btn-outline-danger">
+                                        Danger
+                                    </button>
+                            <button class="w-24 btn btn-outline-dark">
+                                        Dark
+                                    </button>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Loading Buttons</h2>
+                        </div>
+                        <div
+                                    class="flex flex-col items-center justify-center w-full p-5 space-x-0 space-y-2 overflow-auto md:space-x-2 md:space-y-0 md:flex-row">
+                            <button class="w-24 btn btn-primary">
+                                        Saving
+                                        <span class="w-4 h-4 ml-2">
+                                    <svg width="25" viewBox="-2 -2 42 42" xmlns="http://www.w3.org/2000/svg"
+                                                stroke="white" class="w-full h-full">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <g transform="translate(1 1)" stroke-width="4">
+                                                <circle stroke-opacity=".5" cx="18" cy="18" r="18"></circle>
+                                                <path d="M36 18c0-9.94-8.06-18-18-18">
+                                                    <animateTransform attributeName="transform" type="rotate"
+                                                                from="0 18 18" to="360 18 18" dur="1s"
+                                                                repeatCount="indefinite"></animateTransform>
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="w-24 btn btn-success">
+                                        Adding
+                                        <span class="w-4 h-4 ml-2">
+                                    <svg width="20" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
+                                                class="w-full h-full">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <g transform="translate(2 1)" stroke="white" stroke-width="1.5">
+                                                <circle cx="42.601" cy="11.462" r="5" fill-opacity="1"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="1;0;0;0;0;0;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="49.063" cy="27.063" r="5" fill-opacity="0"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;1;0;0;0;0;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="42.601" cy="42.663" r="5" fill-opacity="0"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;1;0;0;0;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;0;1;0;0;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="11.399" cy="42.663" r="5" fill-opacity="0"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;0;0;1;0;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="4.938" cy="27.063" r="5" fill-opacity="0"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;0;0;0;1;0;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="11.399" cy="11.462" r="5" fill-opacity="0"
+                                                            fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;0;0;0;0;1;0" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                                <circle cx="27" cy="5" r="5" fill-opacity="0" fill="white">
+                                                    <animate attributeName="fill-opacity" begin="0s" dur="1.3s"
+                                                                values="0;0;0;0;0;0;0;1" calcMode="linear"
+                                                                repeatCount="indefinite"></animate>
+                                                </circle>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </button>
+                            <button class="w-24 btn btn-danger">
+                                        Deleting
+                                        <span class="w-4 h-4 ml-2">
+                                    <svg width="25" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"
+                                                stroke="white" class="w-full h-full">
+                                        <g fill="none" fill-rule="evenodd" stroke-width="4">
+                                            <circle cx="22" cy="22" r="1">
+                                                <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20"
+                                                            calcMode="spline" keyTimes="0; 1"
+                                                            keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
+                                                <animate attributeName="stroke-opacity" begin="0s" dur="1.8s"
+                                                            values="1; 0" calcMode="spline" keyTimes="0; 1"
+                                                            keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
+                                            </circle>
+                                            <circle cx="22" cy="22" r="1">
+                                                <animate attributeName="r" begin="-0.9s" dur="1.8s"
+                                                            values="1; 20" calcMode="spline" keyTimes="0; 1"
+                                                            keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
+                                                <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s"
+                                                            values="1; 0" calcMode="spline" keyTimes="0; 1"
+                                                            keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
+                                            </circle>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </button>
+                            <span class="relative inline-flex -mt-2 rounded-md shadow-sm">
+                                <button type="button" class="w-24 btn btn-outline-danger">
+                                            Ping
+                                        </button>
+                                <span class="absolute top-0 right-0 flex w-3 h-3 -mt-1 -mr-1">
+                                    <span
+                                                class="absolute inline-flex w-full h-full bg-red-400 rounded-full opacity-75 animate-ping"></span>
+                                    <span class="relative inline-flex w-3 h-3 bg-red-500 rounded-full"></span>
+                                </span>
+                            </span>
+                            <button class="px-4 mx-1 mb-2 btn btn-primary">
+                                        Start
+                                        <span class="w-4 h-4 ml-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-full h-full feather feather-arrow-right animate-bounce-x">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Icon Buttons</h2>
+                        </div>
+                        <div
+                                    class="flex flex-col items-center justify-center w-full p-5 space-x-0 space-y-2 overflow-auto md:space-x-2 md:space-y-0 md:flex-row">
+                            <button class="w-32 btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-4 h-4 mr-2 feather feather-activity">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                                        Activity
+                                    </button>
+                            <button class="w-32 btn btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-4 h-4 mr-2 feather feather-calendar">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                        Calendar
+                                    </button>
+                            <button class="w-32 btn btn-warning">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-4 h-4 mr-2 feather feather-share-2">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                </svg>
+                                        Share
+                                    </button>
+                            <button class="w-32 btn btn-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-4 h-4 mr-2 feather feather-trash">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path
+                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                </svg>
+                                        Trash
+                                    </button>
+                            <button class="w-32 btn btn-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-4 h-4 mr-2 feather feather-image">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                        Image
+                                    </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      </main>
+    </div>
+
+    <script src="./assets/js/scripts.js"></script>
+  </body>
+</html>

@@ -39,10 +39,8 @@ html {
 */
 
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /*
@@ -86,10 +84,8 @@ Grouping content
 */
 
 hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
 }
 
 /*
@@ -130,10 +126,8 @@ pre {
 		Consolas,
 		'Liberation Mono',
 		Menlo,
-		monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+		monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -175,10 +169,8 @@ Tabular data
 */
 
 table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
 }
 
 /*
@@ -196,14 +188,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -212,8 +200,7 @@ Remove the inheritance of text transform in Edge and Firefox.
 */
 
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -285,10 +272,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -305,10 +290,8 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
@@ -379,10 +362,8 @@ ul {
  */
 
 html {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  /* 1 */
-  line-height: 1.5;
-  /* 2 */
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
 }
 
 /**
@@ -424,14 +405,10 @@ body {
 *,
 ::before,
 ::after {
-  box-sizing: border-box;
-  /* 1 */
-  border-width: 0;
-  /* 2 */
-  border-style: solid;
-  /* 2 */
-  border-color: currentColor;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 /*
@@ -574,10 +551,8 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
-  /* 1 */
-  vertical-align: middle;
-  /* 2 */
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
 }
 
 /**
@@ -607,9 +582,9 @@ video {
 }
 
 /**
-  * This injects Tailwind's component classes and any component classes
-  * registered by plugins.
-  */
+   * This injects Tailwind's component classes and any component classes
+   * registered by plugins.
+   */
 
 .container {
   width: 100%;
@@ -2367,9 +2342,9 @@ video {
 }
 
 /*
-   * Sidebar
-   * ================================================================================
-   */
+    * Sidebar
+    * ================================================================================
+    */
 
 .sidebar {
   position: relative;
@@ -2479,10 +2454,20 @@ video {
   display: none;
 }
 
+.sidebar-active {
+  --tw-bg-opacity: 1;
+  background-color: rgba(144, 97, 249, var(--tw-bg-opacity));
+}
+
+.theme-dark .sidebar-active {
+  --tw-bg-opacity: 1;
+  background-color: rgba(100, 116, 139, var(--tw-bg-opacity));
+}
+
 /*
-   * General
-   * ================================================================================
-   */
+    * General
+    * ================================================================================
+    */
 
 .box {
   position: relative;
@@ -2519,9 +2504,9 @@ video {
 }
 
 /*
-   * Alert
-   * ================================================================================
-   */
+    * Alert
+    * ================================================================================
+    */
 
 .alert {
   position: relative;
@@ -2620,9 +2605,9 @@ video {
 }
 
 /*
-   * Button
-   * ================================================================================
-   */
+    * Button
+    * ================================================================================
+    */
 
 .btn {
   display: inline-flex;
@@ -2814,9 +2799,9 @@ video {
 }
 
 /**
-  * This injects Tailwind's utility classes and any utility classes registered
-  * by plugins.
-  */
+   * This injects Tailwind's utility classes and any utility classes registered
+   * by plugins.
+   */
 
 .sr-only {
   position: absolute;
@@ -45487,458 +45472,6 @@ video {
   --tw-placeholder-opacity: 1;
 }
 
-.caret-transparent {
-  caret-color: transparent;
-}
-
-.caret-white {
-  caret-color: #ffffff;
-}
-
-.caret-black {
-  caret-color: #000000;
-}
-
-.caret-gray-50 {
-  caret-color: #f9fafb;
-}
-
-.caret-gray-100 {
-  caret-color: #f4f5f7;
-}
-
-.caret-gray-200 {
-  caret-color: #e5e7eb;
-}
-
-.caret-gray-300 {
-  caret-color: #d5d6d7;
-}
-
-.caret-gray-400 {
-  caret-color: #9e9e9e;
-}
-
-.caret-gray-500 {
-  caret-color: #707275;
-}
-
-.caret-gray-600 {
-  caret-color: #4c4f52;
-}
-
-.caret-gray-700 {
-  caret-color: #24262d;
-}
-
-.caret-gray-800 {
-  caret-color: #1a1c23;
-}
-
-.caret-gray-900 {
-  caret-color: #121317;
-}
-
-.caret-cool-gray-50 {
-  caret-color: #fbfdfe;
-}
-
-.caret-cool-gray-100 {
-  caret-color: #f1f5f9;
-}
-
-.caret-cool-gray-200 {
-  caret-color: #e2e8f0;
-}
-
-.caret-cool-gray-300 {
-  caret-color: #cfd8e3;
-}
-
-.caret-cool-gray-400 {
-  caret-color: #97a6ba;
-}
-
-.caret-cool-gray-500 {
-  caret-color: #64748b;
-}
-
-.caret-cool-gray-600 {
-  caret-color: #475569;
-}
-
-.caret-cool-gray-700 {
-  caret-color: #364152;
-}
-
-.caret-cool-gray-800 {
-  caret-color: #27303f;
-}
-
-.caret-cool-gray-900 {
-  caret-color: #1a202e;
-}
-
-.caret-red-50 {
-  caret-color: #fdf2f2;
-}
-
-.caret-red-100 {
-  caret-color: #fde8e8;
-}
-
-.caret-red-200 {
-  caret-color: #fbd5d5;
-}
-
-.caret-red-300 {
-  caret-color: #f8b4b4;
-}
-
-.caret-red-400 {
-  caret-color: #f98080;
-}
-
-.caret-red-500 {
-  caret-color: #f05252;
-}
-
-.caret-red-600 {
-  caret-color: #e02424;
-}
-
-.caret-red-700 {
-  caret-color: #c81e1e;
-}
-
-.caret-red-800 {
-  caret-color: #9b1c1c;
-}
-
-.caret-red-900 {
-  caret-color: #771d1d;
-}
-
-.caret-orange-50 {
-  caret-color: #fff8f1;
-}
-
-.caret-orange-100 {
-  caret-color: #feecdc;
-}
-
-.caret-orange-200 {
-  caret-color: #fcd9bd;
-}
-
-.caret-orange-300 {
-  caret-color: #fdba8c;
-}
-
-.caret-orange-400 {
-  caret-color: #ff8a4c;
-}
-
-.caret-orange-500 {
-  caret-color: #ff5a1f;
-}
-
-.caret-orange-600 {
-  caret-color: #d03801;
-}
-
-.caret-orange-700 {
-  caret-color: #b43403;
-}
-
-.caret-orange-800 {
-  caret-color: #8a2c0d;
-}
-
-.caret-orange-900 {
-  caret-color: #771d1d;
-}
-
-.caret-yellow-50 {
-  caret-color: #fdfdea;
-}
-
-.caret-yellow-100 {
-  caret-color: #fdf6b2;
-}
-
-.caret-yellow-200 {
-  caret-color: #fce96a;
-}
-
-.caret-yellow-300 {
-  caret-color: #faca15;
-}
-
-.caret-yellow-400 {
-  caret-color: #e3a008;
-}
-
-.caret-yellow-500 {
-  caret-color: #c27803;
-}
-
-.caret-yellow-600 {
-  caret-color: #9f580a;
-}
-
-.caret-yellow-700 {
-  caret-color: #8e4b10;
-}
-
-.caret-yellow-800 {
-  caret-color: #723b13;
-}
-
-.caret-yellow-900 {
-  caret-color: #633112;
-}
-
-.caret-green-50 {
-  caret-color: #f3faf7;
-}
-
-.caret-green-100 {
-  caret-color: #def7ec;
-}
-
-.caret-green-200 {
-  caret-color: #bcf0da;
-}
-
-.caret-green-300 {
-  caret-color: #84e1bc;
-}
-
-.caret-green-400 {
-  caret-color: #31c48d;
-}
-
-.caret-green-500 {
-  caret-color: #0e9f6e;
-}
-
-.caret-green-600 {
-  caret-color: #057a55;
-}
-
-.caret-green-700 {
-  caret-color: #046c4e;
-}
-
-.caret-green-800 {
-  caret-color: #03543f;
-}
-
-.caret-green-900 {
-  caret-color: #014737;
-}
-
-.caret-teal-50 {
-  caret-color: #edfafa;
-}
-
-.caret-teal-100 {
-  caret-color: #d5f5f6;
-}
-
-.caret-teal-200 {
-  caret-color: #afecef;
-}
-
-.caret-teal-300 {
-  caret-color: #7edce2;
-}
-
-.caret-teal-400 {
-  caret-color: #16bdca;
-}
-
-.caret-teal-500 {
-  caret-color: #0694a2;
-}
-
-.caret-teal-600 {
-  caret-color: #047481;
-}
-
-.caret-teal-700 {
-  caret-color: #036672;
-}
-
-.caret-teal-800 {
-  caret-color: #05505c;
-}
-
-.caret-teal-900 {
-  caret-color: #014451;
-}
-
-.caret-blue-50 {
-  caret-color: #ebf5ff;
-}
-
-.caret-blue-100 {
-  caret-color: #e1effe;
-}
-
-.caret-blue-200 {
-  caret-color: #c3ddfd;
-}
-
-.caret-blue-300 {
-  caret-color: #a4cafe;
-}
-
-.caret-blue-400 {
-  caret-color: #76a9fa;
-}
-
-.caret-blue-500 {
-  caret-color: #3f83f8;
-}
-
-.caret-blue-600 {
-  caret-color: #1c64f2;
-}
-
-.caret-blue-700 {
-  caret-color: #1a56db;
-}
-
-.caret-blue-800 {
-  caret-color: #1e429f;
-}
-
-.caret-blue-900 {
-  caret-color: #233876;
-}
-
-.caret-indigo-50 {
-  caret-color: #f0f5ff;
-}
-
-.caret-indigo-100 {
-  caret-color: #e5edff;
-}
-
-.caret-indigo-200 {
-  caret-color: #cddbfe;
-}
-
-.caret-indigo-300 {
-  caret-color: #b4c6fc;
-}
-
-.caret-indigo-400 {
-  caret-color: #8da2fb;
-}
-
-.caret-indigo-500 {
-  caret-color: #6875f5;
-}
-
-.caret-indigo-600 {
-  caret-color: #5850ec;
-}
-
-.caret-indigo-700 {
-  caret-color: #5145cd;
-}
-
-.caret-indigo-800 {
-  caret-color: #42389d;
-}
-
-.caret-indigo-900 {
-  caret-color: #362f78;
-}
-
-.caret-purple-50 {
-  caret-color: #f6f5ff;
-}
-
-.caret-purple-100 {
-  caret-color: #edebfe;
-}
-
-.caret-purple-200 {
-  caret-color: #dcd7fe;
-}
-
-.caret-purple-300 {
-  caret-color: #cabffd;
-}
-
-.caret-purple-400 {
-  caret-color: #ac94fa;
-}
-
-.caret-purple-500 {
-  caret-color: #9061f9;
-}
-
-.caret-purple-600 {
-  caret-color: #7e3af2;
-}
-
-.caret-purple-700 {
-  caret-color: #6c2bd9;
-}
-
-.caret-purple-800 {
-  caret-color: #5521b5;
-}
-
-.caret-purple-900 {
-  caret-color: #4a1d96;
-}
-
-.caret-pink-50 {
-  caret-color: #fdf2f8;
-}
-
-.caret-pink-100 {
-  caret-color: #fce8f3;
-}
-
-.caret-pink-200 {
-  caret-color: #fad1e8;
-}
-
-.caret-pink-300 {
-  caret-color: #f8b4d9;
-}
-
-.caret-pink-400 {
-  caret-color: #f17eb8;
-}
-
-.caret-pink-500 {
-  caret-color: #e74694;
-}
-
-.caret-pink-600 {
-  caret-color: #d61f69;
-}
-
-.caret-pink-700 {
-  caret-color: #bf125d;
-}
-
-.caret-pink-800 {
-  caret-color: #99154b;
-}
-
-.caret-pink-900 {
-  caret-color: #751a3d;
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -51665,10 +51198,6 @@ video {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.content-none {
-  content: none;
 }
 
 .shadow-outline-white {

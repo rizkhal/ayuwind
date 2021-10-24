@@ -1,0 +1,542 @@
+{% extends 'layouts/app.njk' %}
+{% set page = 'alert.html' %}
+{% set page_title = 'Alert' %}
+
+{% block content %}
+    <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 xxl:col-span-9">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12">
+                    <div class="flex items-center h-10 intro-y">
+                        <h2 class="mr-5 text-lg font-medium truncate">Alerts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-12 gap-6 mt-5 intro-y">
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Basic Alerts</h2>
+                        </div>
+                        <div class="p-5 space-y-4">
+                            <div class="alert alert-primary" role="alert"> Awesome simple alert
+                                    </div>
+                            <div class="alert alert-secondary" role="alert"> Awesome simple alert
+                                    </div>
+                            <div class="alert alert-success" role="alert"> Awesome simple alert
+                                    </div>
+                            <div class="alert alert-warning" role="alert"> Awesome simple alert
+                                    </div>
+                            <div class="alert alert-danger" role="alert"> Awesome simple alert
+                                    </div>
+                            <div class="alert alert-dark" role="alert"> Awesome simple alert</div>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Icon Alerts</h2>
+                        </div>
+                        <div class="p-5 space-y-4">
+                            <div class="flex items-center alert alert-primary show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                            <div class="flex items-center alert alert-secondary show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-octagon">
+                                    <polygon
+                                                points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                            <div class="flex items-center alert alert-success show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-octagon">
+                                    <polygon
+                                                points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                            <div class="flex items-center alert alert-warning show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                            <div class="flex items-center alert alert-danger show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-octagon">
+                                    <polygon
+                                                points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                            <div class="flex items-center alert alert-dark show" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="w-6 h-6 mr-2 feather feather-alert-octagon">
+                                    <polygon
+                                                points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Awesome alert with icon
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium"> Additional Content Alerts </h2>
+                        </div>
+                        <div class="p-5 space-y-4">
+                            <div class="alert alert-primary show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-gray-800 bg-white rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3"> Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s. </div>
+                            </div>
+                            <div class="alert alert-secondary show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-white bg-gray-600 rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3"> Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s. </div>
+                            </div>
+                            <div class="alert alert-success show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-gray-800 bg-white rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3"> Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s. </div>
+                            </div>
+                            <div class="alert alert-warning show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-gray-800 bg-white rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3"> Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s. </div>
+                            </div>
+                            <div class="alert alert-danger show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-gray-800 bg-white rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3"> Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s. </div>
+                            </div>
+                            <div class="alert alert-dark show" role="alert">
+                                <div class="flex items-center">
+                                    <div class="text-lg font-medium"> Awesome alert with additional info
+                                            </div>
+                                    <div class="px-1 ml-auto text-xs text-white bg-gray-600 rounded-md"> New
+                                            </div>
+                                </div>
+                                <div class="mt-3">
+                                            Lorem Ipsum is simply dummy text of the printing and
+                                            typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                            text ever since the 1500s.
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Icon &amp; Dismiss Alerts</h2>
+                        </div>
+                        <div class="p-5 space-y-4">
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-primary"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-secondary"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-success"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-warning"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-danger" role="alert"
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-dark" role="alert"
+                                            x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5 intro-y box">
+                        <div
+                                    class="flex flex-col items-center p-5 border-b border-gray-200 sm:flex-row dark:border-cool-gray-800">
+                            <h2 class="mr-auto text-base font-medium">Outline Alerts</h2>
+                        </div>
+                        <div class="p-5 space-y-4">
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-primary"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-secondary"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-success"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-warning"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-danger"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div x-data="dismissible">
+                                <div x-bind="dialogue" class="flex items-center alert alert-outline-dark"
+                                            role="alert" x-transition:enter="transition ease-out duration-200"
+                                            x-transition:enter-start="opacity-0 transform translate-x-6"
+                                            x-transition:enter-end="opacity-100 transform translate-x-24"
+                                            x-transition:leave="transition ease-in duration-200"
+                                            x-transition:leave-start="opacity-100 transform translate-x-24"
+                                            x-transition:leave-end="opacity-0 transform translate-x-6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="w-6 h-6 mr-2 feather feather-alert-circle">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg> Awesome alert with icond
+                                            <button x-bind="toggle" type="button" class="ml-auto"
+                                                data-bs-dismiss="alert" aria-label="Close">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-4 h-4 feather feather-x">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

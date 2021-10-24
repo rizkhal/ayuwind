@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "A multi theme, completely accessible, with components and pages examples, ready for production dashboard.",
   "scripts": {
-    "dev": "gulp",
-    "build": "gulp prod",
-    "prod": "gulp prod"
+    "serve": "gulp",
+    "build": "gulp build"
   },
   "author": "Rizkhal Lamaau <lamaaurizkhal@gmail.com>",
   "license": "MIT",
