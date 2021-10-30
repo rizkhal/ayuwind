@@ -3,6 +3,7 @@ const del = require("del");
 const njk = require("gulp-nunjucks-render");
 const postcss = require("gulp-postcss");
 const concat = require("gulp-concat");
+const rename = require("gulp-rename");
 const browserSync = require("browser-sync").create();
 
 function serve(cb) {
@@ -52,9 +53,29 @@ function buildPageTask() {
     .pipe(
       njk({
         path: ["./src/views"],
+        manageEnv: manageEnvironment,
       })
     )
-    .pipe(dest("dist/pages"));
+    .pipe(rename({
+      prefix: 'page-'
+    }))
+    .pipe(dest("dist"));
+}
+
+function buildComponentTask() {
+  return src("./src/views/components/*.*")
+    .pipe(
+      njk({
+        path: ["./src/views"],
+        manageEnv: manageEnvironment,
+      })
+    )
+    .pipe(
+      rename({
+        prefix: "component-",
+      })
+    )
+    .pipe(dest("dist"));
 }
 
 function buildScssTask() {
@@ -68,6 +89,12 @@ function buildJavascriptTask() {
   return src([`./src/assets/js/*.js`]).pipe(dest("./dist/assets/js"));
 }
 
+function buildAlpineTask() {
+  return src("./node_modules/alpinejs/dist/cdn.js")
+    .pipe(concat({ path: "alpine.js" }))
+    .pipe(dest("./dist/assets/js"));
+}
+
 function buildImageTask() {
   return src(`./src/assets/img/*`).pipe(dest("./dist/assets/images"));
 }
@@ -75,11 +102,12 @@ function buildImageTask() {
 function watchFiles() {
   watch(`./src/views`, buildHtmlTask).on("change", reload);
   watch(`./src/views/pages`, buildPageTask).on("change", reload);
+  watch(`./src/views/components`, buildComponentTask).on("change", reload);
 
-  watch(["./tailwind.config.js", `./src/assets/css/*.css`], buildScssTask).on(
-    "change",
-    reload
-  );
+  watch(
+    ["./tailwind.config.js", `./src/assets/scss/**/*.scss`],
+    buildScssTask
+  ).on("change", reload);
   watch(`./src/assets/js/**/*.js`, buildJavascriptTask).on("change", reload);
   watch(`./src/assets/images/**/*`, buildImageTask).on("chnage", reload);
 }
@@ -89,8 +117,10 @@ exports.default = series(
   parallel(
     buildScssTask,
     buildJavascriptTask,
+    buildAlpineTask,
     buildImageTask,
     buildHtmlTask,
+    buildComponentTask,
     buildPageTask
   ),
   serve,
@@ -102,8 +132,10 @@ exports.build = series(
   parallel(
     buildScssTask,
     buildJavascriptTask,
+    buildAlpineTask,
     buildImageTask,
     buildHtmlTask,
+    buildComponentTask,
     buildPageTask
   )
 );

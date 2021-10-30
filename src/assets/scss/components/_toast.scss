@@ -1,0 +1,19 @@
+.toastify {
+  @apply bg-white cursor-pointer transition-all duration-500 rounded-md z-50 fixed max-w-prose;
+}
+
+.toastify-top {
+  @apply top-4;
+}
+
+.toastify-right {
+  @apply right-4;
+}
+
+.toastify-content {
+  @apply rounded-md border border-gray-300 p-3 shadow-md;
+}
+
+.toastify .toast-close {
+  @apply flex items-center absolute inset-y-0 right-4 text-gray-300;
+}

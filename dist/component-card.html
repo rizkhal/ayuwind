@@ -1,4 +1,23 @@
-<aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
+<!DOCTYPE html>
+<html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Components &mdash; Ayuwind</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/alpine.js"></script>
+  <style>
+    /* hide browser sync message, disable it if you read it :) */
+    #__bs_notify__ {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body class="flex h-screen">
+  <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
     <div class="flex flex-row items-center my-4">
         <div class="side-logo">
             <span class="text-white">
@@ -17,7 +36,7 @@
 
     <ul class="mt-10 mb-5 space-y-2 side-menu-container">
         <li class="mx-3">
-            <a href="index.html" class="side-menu-link {{ 'sidebar-active'|is_active('^index.html', page)|safe }}">
+            <a href="index.html" class="side-menu-link ">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -28,17 +47,9 @@
         </li>
         <li class="mx-3" x-data="dropdown({
             open:
-                {%
-                    if page == 'component-alert.html'
-                        or page == 'component-button.html'
-                        or page == 'component-input.html'
-                        or page == 'component-toast.html'
-                        or page == 'component-card.html'
-                %}
+                
                     true
-                {%else%}
-                    false
-                {% endif %}
+                
         })">
             <a href="#" x-bind="toggle" class="relative side-menu-link"
                 :class="open && 'bg-purple-500 dark:bg-cool-gray-500'">
@@ -66,7 +77,7 @@
                 style="display: none;">
                 <li>
                     <a href="./component-alert.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-alert.html', page)|safe }}">
+                        class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -78,7 +89,7 @@
                 </li>
                 <li>
                     <a href="./component-button.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-button.html', page)|safe }}">
+                        class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -90,7 +101,7 @@
                 </li>
                 <li>
                     <a href="./component-card.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-card.html', page)|safe }}">
+                        class="side-menu-link sidebar-active">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -102,7 +113,7 @@
                 </li>
                 <li>
                     <a href="./component-input.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-input.html', page)|safe }}">
+                        class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -114,7 +125,7 @@
                 </li>
                 <li>
                     <a href="./component-toast.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-toast.html', page)|safe }}">
+                        class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -191,3 +202,63 @@
         </div>
     </div>
 </aside>
+
+  <div class="flex flex-col flex-1 w-full">
+    <header
+    class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
+    <div class="-intro-x mr-auto text-sm ml-6 flex items-center space-x-2">
+        <a href="#" class="text-purple-500 dark:text-purple-200">Application</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-right w-4 h-4 text-cool-gray-500">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <a href="#" class="text-cool-gray-500 cursor-default">Dashboard</a>
+    </div>
+    <!-- dark toggle -->
+    <div class="ml-auto mr-6 intro-x">
+        <div class="flex space-x-6">
+            <div class="relative hidden md:block">
+                <input @keyup.ctrl.slash.document="$nextTick(() => $el.focus())" x-ref="search" type="text"
+                    class="form-control form-control-sm border-transparent pr-10 bg-cool-gray-200 placeholder-cool-gray-500 form-input"
+                    placeholder="Search..." style="height: 2.2rem!important;"/>
+                <div class="absolute text-cool-gray-400 py-1 cursor-pointer px-2 border border-cool-gray-300 dark:border-cool-gray-600 rounded-md text-xs right-1 top-1"
+                    style="font-size: 10px!important;" @click="$refs.search.focus()">
+                    Ctrl + /
+                </div>
+            </div>
+
+            <button @click="$store.dark.setTheme()" class="text-cool-gray-500 dark:text-cool-gray-100">
+                <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-sun">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-moon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+    <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+      
+    Card Components
+
+    </main>
+  </div>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

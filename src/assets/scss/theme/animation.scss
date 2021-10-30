@@ -1,3 +1,16 @@
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+    width: 100%;
+  }
+}
+
 @-webkit-keyframes intro-x-animation {
   to {
     opacity: 1;
@@ -33,6 +46,13 @@
     transform: translateX(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+}
+
+.progress {
+  animation: progress;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 .animate-bounce-x {

@@ -1,24 +1,52 @@
+.text-muted {
+  @apply text-xs text-gray-500 mt-2;
+}
+
+.theme-dark .text-muted {
+  @apply text-gray-400;
+}
+
 .form-group {
-    @apply flex flex-col;
-  }
+  @apply flex flex-col;
+}
 
-  .form-group > label {
-    @apply mb-1 text-sm mr-auto;
-  }
+.form-group > label {
+  @apply mb-1 text-sm mr-auto;
+}
 
-  .form-control {
-    @apply rounded-md border py-2 px-3 text-gray-800;
-  }
+.form-inline {
+  @apply flex items-center;
+}
 
-  .form-control:focus,
-  .theme-dark .form-control:focus {
-    @apply border-purple-500;
-  }
+.form-inline .form-control {
+  @apply flex-1;
+}
 
-  .theme-dark .form-control {
-    @apply bg-cool-gray-800 border-cool-gray-600 text-gray-200;
-  }
+.form-control {
+  @apply rounded-md border py-2 px-3 text-gray-800;
+}
 
-  .form-help {
-    @apply text-xs mt-1;
-  }
+.form-control-sm {
+  @apply text-xs;
+}
+
+.form-control-lg {
+  @apply text-lg;
+}
+
+.form-control:disabled {
+  @apply bg-gray-200;
+}
+
+.form-control:focus,
+.theme-dark .form-control:focus {
+  @apply border-purple-500;
+}
+
+.theme-dark .form-control:disabled {
+  @apply bg-cool-gray-900;
+}
+
+.theme-dark .form-control {
+  @apply bg-cool-gray-800 border-cool-gray-600 text-gray-200;
+}
