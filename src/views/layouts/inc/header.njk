@@ -1,35 +1,47 @@
-<header x-data="sidebar"
-            class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
-    <!-- sidebar toggle -->
-    <button x-bind="toggle" type="button" class="ml-4 -intro-x">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2 transform rotate-90">
-            <line x1="18" y1="20" x2="18" y2="10"></line>
-            <line x1="12" y1="20" x2="12" y2="4"></line>
-            <line x1="6" y1="20" x2="6" y2="14"></line>
+<header
+    class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
+    <div class="-intro-x mr-auto text-sm ml-6 flex items-center space-x-2">
+        <a href="#" class="text-purple-500 dark:text-purple-200">Application</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-right w-4 h-4 text-cool-gray-500">
+            <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
-    </button>
-
+        <a href="#" class="text-cool-gray-500 cursor-default">Dashboard</a>
+    </div>
     <!-- dark toggle -->
-    <div class="ml-auto mr-6 space-x-6 intro-x">
-        <button @click="$store.dark.setTheme()">
-            <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-sun">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="feather feather-moon">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
+    <div class="ml-auto mr-6 intro-x">
+        <div class="flex space-x-6">
+            <div class="relative hidden md:block">
+                <input @keyup.ctrl.slash.document="$nextTick(() => $el.focus())" x-ref="search" type="text"
+                    class="form-control form-control-sm border-transparent pr-10 bg-cool-gray-200 placeholder-cool-gray-500 form-input"
+                    placeholder="Search..." style="height: 2.2rem!important;"/>
+                <div class="absolute text-cool-gray-400 py-1 cursor-pointer px-2 border border-cool-gray-300 dark:border-cool-gray-600 rounded-md text-xs right-1 top-1"
+                    style="font-size: 10px!important;" @click="$refs.search.focus()">
+                    Ctrl + /
+                </div>
+            </div>
+
+            <button @click="$store.dark.setTheme()" class="text-cool-gray-500 dark:text-cool-gray-100">
+                <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-sun">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-moon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
     </div>
 </header>

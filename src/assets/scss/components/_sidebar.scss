@@ -10,6 +10,14 @@
   @apply bg-gradient-to-b from-cool-gray-700 via-cool-gray-600 to-cool-gray-800;
 }
 
+.sidebar-toggle {
+  @apply text-white ml-auto mr-3;
+}
+
+.mini-sidebar .sidebar-toggle {
+  @apply mr-5;
+}
+
 .mini-sidebar {
   @apply w-20;
 }

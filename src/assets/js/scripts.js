@@ -45,6 +45,9 @@ document.addEventListener("alpine:init", () => {
 
   Alpine.data("ayu", () => ({
     init() {
+      this.watchSidebar();
+    },
+    watchSidebar() {
       let sidebar = this.$refs.sidebar,
         w =
           window.innerWidth ||
@@ -69,10 +72,7 @@ document.addEventListener("alpine:init", () => {
         sidebar.classList.remove("mini-sidebar");
       }
     },
-  }));
-
-  Alpine.data("sidebar", () => ({
-    toggle: {
+    sidebarToggle: {
       ["@click"]() {
         this.$store.sidebar.setSidebar();
         this.$refs.sidebar.classList.toggle("mini-sidebar");
@@ -105,6 +105,32 @@ document.addEventListener("alpine:init", () => {
       ["x-show"]() {
         return this.open;
       },
+    },
+  }));
+
+  Alpine.data("toast", () => ({
+    counter: 0,
+    list: [],
+    createToast(type, title, message) {
+      const index = this.list.length;
+      let totalVisible =
+        this.list.filter((toast) => {
+          return toast.visible;
+        }).length + 1;
+
+      this.list.push({
+        id: this.counter++,
+        type,
+        title,
+        message,
+        visible: true,
+      });
+      setTimeout(() => {
+        this.destroyToast(index);
+      }, 5000 * totalVisible);
+    },
+    destroyToast(index) {
+      this.list[index].visible = false;
     },
   }));
 });
