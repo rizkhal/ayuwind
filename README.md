@@ -1,41 +1,47 @@
-# AyuWind Dashboard
+<h1 align="center">Ayuwind</h1>
+<p align="center">Ayuwind is an Admin Dashboard Template that can help you develop faster. Alpine and Tailwind.</p>
+<p align="center">
 
-A multi theme, completely accessible, with components and pages examples, ready for production dashboard.
+![GitHub last commit](https://img.shields.io/github/last-commit/ayuwind/ayuwind)
+[![GitHub issues](https://img.shields.io/github/issues/ayuwind/ayuwind)](https://github.com/ayuwind/ayuwind/issues)
+![GitHub repo size](https://img.shields.io/github/repo-size/ayuwind/ayuwind)
 
-🧪 [See it live](https://ayuwind.github.io/ayuwind/public/index.html)
+</p>
 
-- 🦮 Thoroughly accessible
-- 🌗 Light and dark themes
-- 💅 Styled with Tailwind CSS
-- 🧩 Various components
+![Screenshot](./art/screenshot.png)
 
-## 🚀 Usage
+## Installation
 
-Clone or download this repo and everything you need is inside the `public` folder.
+1. Clone this repository or download zip
 
-## 🌗 Multi theme
+```bash
+git clone https://github.com/ayuwind/ayuwind
+```
 
-It uses Tailwind CSS for styling, and some may say it is totally biased, but it uses the most simple theming plugin there is for it, [Tailwind Multi Theme plugin](https://github.com/estevanmaito/tailwindcss-multi-theme#tailwind-css-multi-theme) Created By ([Estevan Maito](https://github.com/estevanmaito)). The result is that, as with regular Tailwind, you have control over every style in your pages.
+2. Open `ayuwind/dist/index.html` to see the dashboard
 
-You can see that by navigating through the examples, changing theme and going visiting pages like login or create account, to see different images served for different themes.
+## Demo and Documentation
 
-Theme auto detection based on user's OS preferences and local settings storage are enabled by default.
+- Open the [demo page](https://ayuwind.vercel.app)
+- Open the [documentation page](https://ayuwind.vercel.app)
 
-## 🗃 Components
+## Contributing
 
-- [x] Alert
-- [x] Button
-- [ ] Card
-- [ ] Toast
+- Fork it ( https://github.com/ayuwind/ayuwind/fork )
+- Create your feature branch (`git checkout -b my-new-feature`)
+- Commit your changes (`git commit -am 'Add some feature'`)
+- Push to the branch (`git push origin my-new-feature`)
+- Create a new Pull Request
 
-## 📋 Forms
-- [ ] Regular
-- [ ] Validate
+### Note
 
-## OSS used
+- If you want to make some changes in the CSS style. Don't edit the `.css` file, use the SCSS file instead.
+- Since we use Nunjucks, if you want to make changes to the HTML structure, make sure you change the source file (Nunjucks) located in `src`.
 
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Multi Theme](https://github.com/estevanmaito/tailwindcss-multi-theme)
-- [PostCSS](https://postcss.org/)
-- [Alpine.js](https://github.com/alpinejs/alpine)
-- [Feather (icons)](https://feathericons.com/)
+## License
+
+Ayuwind is under MIT License.
+
+## About the Author
+
+Ayuwind is created by <a href="https://rizkhal.me">Rizkhal</a>
