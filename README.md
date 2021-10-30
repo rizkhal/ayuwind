@@ -3,9 +3,17 @@
 
 <p align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/ayuwind/ayuwind)
-[![GitHub issues](https://img.shields.io/github/issues/ayuwind/ayuwind)](https://github.com/ayuwind/ayuwind/issues)
-![GitHub repo size](https://img.shields.io/github/repo-size/ayuwind/ayuwind)
+<a href="https://img.shields.io/github/last-commit/ayuwind/ayuwind">
+  <img src="https://img.shields.io/github/last-commit/ayuwind/ayuwind" />
+</a>
+  
+<a href="https://img.shields.io/github/issues/ayuwind/ayuwind">
+  <img src="https://img.shields.io/github/issues/ayuwind/ayuwind" />
+</a>
+  
+<a href="https://img.shields.io/github/repo-size/ayuwind/ayuwind">
+  <img src="https://img.shields.io/github/repo-size/ayuwind/ayuwind" />
+</a>
 
 </p>
 
