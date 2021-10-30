@@ -1,5 +1,6 @@
 <h1 align="center">Ayuwind</h1>
-<p align="center">Ayuwind is an Admin Dashboard Template that can help you develop faster. Alpine and Tailwind.</p>
+<p align="center">Ayuwind is an Admin Dashboard Template that can help you develop faster. Made with Alpine and Tailwind.</p>
+
 <p align="center">
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/ayuwind/ayuwind)
