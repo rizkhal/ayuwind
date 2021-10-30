@@ -40,7 +40,7 @@ git clone https://github.com/ayuwind/ayuwind
 
 ## License
 
-Mazer is under MIT License.
+Ayuwind is under MIT License.
 
 ## About the Author
 
