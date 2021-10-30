@@ -45,6 +45,9 @@ document.addEventListener("alpine:init", () => {
 
   Alpine.data("ayu", () => ({
     init() {
+      this.watchSidebar();
+    },
+    watchSidebar() {
       let sidebar = this.$refs.sidebar,
         w =
           window.innerWidth ||

@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page_title | safe }} &mdash; Ayuwind</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script defer src="./assets/js/alpine.js"></script>
-  </head>
 
-  <body class="flex h-screen">
-    {% include "layouts/inc/sidebar.njk" %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title | safe }} &mdash; Ayuwind</title>
+  <link rel="stylesheet" href="{{ path }}assets/css/styles.css">
+  <script defer src="{{ path }}assets/js/alpine.js"></script>
+  <style>
+    /* hide browser sync message, disable it if you read it :) */
+    #__bs_notify__ {
+      display: none !important;
+    }
+  </style>
+</head>
 
-    <div class="flex flex-col flex-1 w-full">
-      {% include "layouts/inc/header.njk" %}
-      <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
-        {% block content %}{% endblock %}
-      </main>
-    </div>
+<body class="flex h-screen">
+  {% include "layouts/inc/sidebar.njk" %}
 
-    <script src="./assets/js/scripts.js"></script>
-  </body>
+  <div class="flex flex-col flex-1 w-full">
+    {% include "layouts/inc/header.njk" %}
+    <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <script src="{{ path }}assets/js/scripts.js"></script>
+</body>
+
 </html>

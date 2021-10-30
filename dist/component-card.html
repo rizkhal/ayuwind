@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" x-data="ayu" :class="$store.dark.on && 'theme-dark'">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Components &mdash; Ayuwind</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <script defer src="./assets/js/alpine.js"></script>
-  </head>
 
-  <body class="flex h-screen">
-    <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Components &mdash; Ayuwind</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="assets/js/alpine.js"></script>
+  <style>
+    /* hide browser sync message, disable it if you read it :) */
+    #__bs_notify__ {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body class="flex h-screen">
+  <aside x-ref="sidebar" class="flex flex-col sidebar" :class="$store.sidebar.open && 'mini-sidebar'">
     <div class="flex flex-row items-center my-4">
         <div class="side-logo">
             <span class="text-white">
@@ -69,7 +76,7 @@
                 x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                 style="display: none;">
                 <li>
-                    <a href="alert.html"
+                    <a href="./component-alert.html"
                         class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -81,7 +88,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="button.html"
+                    <a href="./component-button.html"
                         class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -93,7 +100,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="card.html" class="side-menu-link sidebar-active">
+                    <a href="./component-card.html"
+                        class="side-menu-link sidebar-active">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -104,7 +112,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="input.html"
+                    <a href="./component-input.html"
                         class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -116,7 +124,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="toast.html" class="side-menu-link ">
+                    <a href="./component-toast.html"
+                        class="side-menu-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -180,8 +189,9 @@
     <div class="w-full mt-auto mb-5">
         <div class="p-2 mx-3 bg-purple-600 rounded-xl dark:bg-cool-gray-500">
             <div class="flex flex-row items-center">
-                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=50&h=50"
-                    alt="Profile Picture" class="rounded-xl" />
+                <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
+                    <img src="./assets/images/profile.jpg" alt="Profile Picture" class="rounded-xl" />
+                </div>
                 <div class="side-profile">
                     <div class="flex flex-col ml-2 space-y-1 text-sm text-white">
                         <span class="font-bold">Rizkhal Lamaau</span>
@@ -193,40 +203,62 @@
     </div>
 </aside>
 
-    <div class="flex flex-col flex-1 w-full">
-      <header
+  <div class="flex flex-col flex-1 w-full">
+    <header
     class="flex items-center w-full h-16 overflow-hidden bg-white shadow-xl dark:bg-cool-gray-700 dark:text-gray-300">
+    <div class="-intro-x mr-auto text-sm ml-6 flex items-center space-x-2">
+        <a href="#" class="text-purple-500 dark:text-purple-200">Application</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-chevron-right w-4 h-4 text-cool-gray-500">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        <a href="#" class="text-cool-gray-500 cursor-default">Dashboard</a>
+    </div>
     <!-- dark toggle -->
-    <div class="ml-auto mr-6 space-x-6 intro-x">
-        <button @click="$store.dark.setTheme()">
-            <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-sun">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-moon">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
+    <div class="ml-auto mr-6 intro-x">
+        <div class="flex space-x-6">
+            <div class="relative hidden md:block">
+                <input @keyup.ctrl.slash.document="$nextTick(() => $el.focus())" x-ref="search" type="text"
+                    class="form-control form-control-sm border-transparent pr-10 bg-cool-gray-200 placeholder-cool-gray-500 form-input"
+                    placeholder="Search..." style="height: 2.2rem!important;"/>
+                <div class="absolute text-cool-gray-400 py-1 cursor-pointer px-2 border border-cool-gray-300 dark:border-cool-gray-600 rounded-md text-xs right-1 top-1"
+                    style="font-size: 10px!important;" @click="$refs.search.focus()">
+                    Ctrl + /
+                </div>
+            </div>
+
+            <button @click="$store.dark.setTheme()" class="text-cool-gray-500 dark:text-cool-gray-100">
+                <svg x-show="$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-sun">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg x-show="!$store.dark.on" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-moon">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
     </div>
 </header>
-      <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
-        
+    <main class="w-full h-full p-4 overflow-y-auto bg-gray-200 dark:bg-cool-gray-800 dark:text-gray-300">
+      
     Card Components
 
-      </main>
-    </div>
+    </main>
+  </div>
 
-    <script src="./assets/js/scripts.js"></script>
-  </body>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
 </html>

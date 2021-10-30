@@ -29,11 +29,11 @@
         <li class="mx-3" x-data="dropdown({
             open:
                 {%
-                    if page == 'alert.html'
-                        or page == 'button.html'
-                        or page == 'input.html'
-                        or page == 'toast.html'
-                        or page == 'card.html'
+                    if page == 'component-alert.html'
+                        or page == 'component-button.html'
+                        or page == 'component-input.html'
+                        or page == 'component-toast.html'
+                        or page == 'component-card.html'
                 %}
                     true
                 {%else%}
@@ -65,8 +65,8 @@
                 x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                 style="display: none;">
                 <li>
-                    <a href="alert.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^alert.html', page)|safe }}">
+                    <a href="./component-alert.html"
+                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-alert.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -77,8 +77,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="button.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^button.html', page)|safe }}">
+                    <a href="./component-button.html"
+                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-button.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -89,7 +89,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="card.html" class="side-menu-link {{ 'sidebar-active'|is_active('^card.html', page)|safe }}">
+                    <a href="./component-card.html"
+                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-card.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -100,8 +101,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="input.html"
-                        class="side-menu-link {{ 'sidebar-active'|is_active('^input.html', page)|safe }}">
+                    <a href="./component-input.html"
+                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-input.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -112,7 +113,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="toast.html" class="side-menu-link {{ 'sidebar-active'|is_active('^toast.html', page)|safe }}">
+                    <a href="./component-toast.html"
+                        class="side-menu-link {{ 'sidebar-active'|is_active('^component-toast.html', page)|safe }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="w-4 h-4 feather feather-corner-down-right">
@@ -176,8 +178,9 @@
     <div class="w-full mt-auto mb-5">
         <div class="p-2 mx-3 bg-purple-600 rounded-xl dark:bg-cool-gray-500">
             <div class="flex flex-row items-center">
-                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=50&h=50"
-                    alt="Profile Picture" class="rounded-xl" />
+                <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
+                    <img src="./assets/images/profile.jpg" alt="Profile Picture" class="rounded-xl" />
+                </div>
                 <div class="side-profile">
                     <div class="flex flex-col ml-2 space-y-1 text-sm text-white">
                         <span class="font-bold">Rizkhal Lamaau</span>
